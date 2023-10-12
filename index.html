@@ -6,17 +6,30 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <title>Document</title>
     <style>
+      body {
+        background-color: #090930;
+        color: white;
+      }
+      .wrap {
+        display: flex;
+        justify-content: center;
+        height: 100vh;
+        align-items: center;
+        margin: 0 auto;
+      }
       label {
         font-size: 24px;
         font-weight: 700;
         font-family: sans-serif;
       }
-      .fa-eye-slash {
+      i {
         cursor: pointer;
       }
       input {
         outline: none;
         border: none;
+        background-color: transparent;
+        color: white;
       }
       .container {
         display: inline-block;
@@ -27,12 +40,11 @@
     </style>
   </head>
   <body>
-    <div>
-      <h2>Simple Form input for Password hiding and showing up</h2>
+    <div class="wrap">
       <form>
         <label>Password:</label>
         <div class="container">
-          <input type="password" placeholder="Enter password"  id="password" maxlength="8" />
+          <input type="password" placeholder="Enter password"  id="password" maxlength="11" />
           <i class="fa fa-eye-slash" id="icon"></i>
         </div>
       </form>
@@ -44,8 +56,12 @@
       icon.addEventListener("click", () => {
         if(passwordAttr.type == "password") {
           passwordAttr.setAttribute("type", "text");
+          icon.classList.toggle("fa-eye-slash");
+          icon.classList.add("fa-eye");
         }else {
           passwordAttr.setAttribute("type", "password");
+          icon.classList.add("fa-eye-slash");
+          icon.classList.toggle("fa-eye");
         }
       })
     </script>
