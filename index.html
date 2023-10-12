@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <title>Document</title>
+    <style>
+      label {
+        font-size: 24px;
+        font-weight: 700;
+        font-family: sans-serif;
+      }
+      .fa-eye-slash {
+        cursor: pointer;
+      }
+      input {
+        outline: none;
+        border: none;
+      }
+      .container {
+        display: inline-block;
+        border: 2px solid;
+        padding: 5px;
+        border-radius: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h2>Simple Form input for Password hiding and showing up</h2>
+      <form>
+        <label>Password:</label>
+        <div class="container">
+          <input type="password" placeholder="Enter password"  id="password" maxlength="8" />
+          <i class="fa fa-eye-slash" id="icon"></i>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      const icon = document.getElementById("icon");
+      const passwordAttr = document.getElementById("password");
+      icon.addEventListener("click", () => {
+        if(passwordAttr.type == "password") {
+          passwordAttr.setAttribute("type", "text");
+        }else {
+          passwordAttr.setAttribute("type", "password");
+        }
+      })
+    </script>
+  </body>
+</html>
