@@ -55,11 +55,13 @@
       const passwordAttr = document.getElementById("password");
       icon.addEventListener("click", () => {
         if(passwordAttr.type == "password") {
-          passwordAttr.setAttribute("type", "text");
+          // passwordAttr.setAttribute("type", "text");
+          passwordAttr.type = "text";
           icon.classList.toggle("fa-eye-slash");
           icon.classList.add("fa-eye");
         }else {
-          passwordAttr.setAttribute("type", "password");
+          // passwordAttr.setAttribute("type", "password");
+          passwordAttr.type = "password";
           icon.classList.add("fa-eye-slash");
           icon.classList.toggle("fa-eye");
         }
